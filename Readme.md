@@ -1,6 +1,6 @@
-Materials for the course *Bayesian modeling of spatio-temporal point pattern data* taught during the IV Workshop of the Colombian Statistical Society in May 2025.
+**Materials** for the course *Bayesian modeling of spatio-temporal point pattern data* taught during the IV Workshop of the Colombian Statistical Society in May 2025.
 
-The main folder contains the codes ton run the different models described during the course, including data loading and preparation, definition of constants and initial values, and model fitting with **nimble**. In particular:
+The *main folder* contains the codes ton run the different models described during the course, including data loading and preparation, definition of constants and initial values, and model fitting with **nimble**. In particular:
 
 - "0 Data exploration.R" contains some lines of code for an initial exploration of the data.
 - "1 Homogeneous Poisson model.R" contains the code for fitting the Poisson homogeneous model.
@@ -8,7 +8,7 @@ The main folder contains the codes ton run the different models described during
 - "3 Splines for the spatial intensity.R", "3 Underdetection events.R", "3 Temporal location uncertainty.R" contain the code for fitting the "advanced" examples described in the course.
 -  "4 Residual analysis.R" contains the code for doing a spatial residual analysis on the Poisson homogeneous model (note that the output from this model needs to be in the "Outputs" folder, so run code "1 Homogeneous Poisson model.R" or any other of the codes to perform the residual analysis.
 
-Furthermore:
+**Furthermore:**
 
 - Folder *Models* contains the **nimble** codes of each of the Bayesian point process models explained.
 - Folder *Data* contains the data required to use the codes. Note that to avoid violating the privacy of the data, the time locations have been obtained from a uniform distribution on [0,365] (the results shown in the slides correspond to the real dataset).
