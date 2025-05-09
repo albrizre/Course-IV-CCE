@@ -4,7 +4,7 @@ The *main folder* contains the codes ton run the different models described duri
 
 - "0 Data exploration.R" contains some lines of code for an initial exploration of the data.
 - "1 Homogeneous Poisson model.R" contains the code for fitting the Poisson homogeneous model.
-- "2 Inhomogeneous Poisson model v1.R", "2 Inhomogeneous Poisson model v2.R", and "2 Inhomogeneous Poisson model v3.R" contain the code for fitting the following three versions of an inhomogeneous Poisson model: spatial covariates (v1), spatial covariates and temporal effect decaying from day t = 200 (v2), and spatial covariates and a first-order random walk for the temporal effect (v3).
+- "2 Inhomogeneous Poisson model v1.R", "2 Inhomogeneous Poisson model v2.R", and "2 Inhomogeneous Poisson model v3.R" contain the code for fitting the following three versions of an inhomogeneous Poisson model: including spatial covariates (v1), including spatial covariates and a temporal effect decaying from day t = 200 (v2), and including spatial covariates and a first-order random walk for the temporal effect (v3).
 - "3 Splines for the spatial intensity.R", "3 Underdetection events.R", "3 Temporal location uncertainty.R" contain the code for fitting the "advanced" examples described in the course.
 -  "4 Residual analysis.R" contains the code for doing a spatial residual analysis on the Poisson homogeneous model (note that the output from this model needs to be in the "Outputs" folder, so run code "1 Homogeneous Poisson model.R" or any other of the codes to perform the residual analysis.
 
