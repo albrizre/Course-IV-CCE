@@ -26,10 +26,6 @@ load("Outputs/Poisson_hom.rda")
 pattern=ppp(x = events_study_area@coords[,1],y = events_study_area@coords[,2],
             window = as.owin(sf::st_union(grid_val_sf)))
 bw_select=spatstat.explore::bw.scott(pattern,isotropic = T)
-lambdas=as.data.frame(mcmc.output$summary$chain1[grep("lambda_int",rownames(mcmc.output$summary$chain1)),])
-aux=rep(1:647,366)
-lambdas$Cell=aux
-lambdas_avg_cell=sqldf::sqldf("SELECT Cell, SUM(Mean) as Model from lambdas GROUP BY Cell")
 funcion_density=densityfun(pattern,sigma = bw_select)
 centroids=sf::st_coordinates(sf::st_centroid(grid_val_sf,byid = T))
 density_values=funcion_density(centroids[,1],centroids[,2])
@@ -37,6 +33,12 @@ density_values=funcion_density(centroids[,1],centroids[,2])
 # Second, we compute the smoothed values of the fitted intensity
 X=ppp(x=centroids[,1],y=centroids[,2],
       window = as.owin(sf::st_union(grid_val_sf)))
+lambdas=as.data.frame(mcmc.output$summary$chain1[grep("lambda_int",
+                      rownames(mcmc.output$summary$chain1)),])
+aux=rep(1:647,366)
+lambdas$Cell=aux
+lambdas_avg_cell=sqldf::sqldf("SELECT Cell, SUM(Mean) as Model from lambdas
+                               GROUP BY Cell")
 marks(X)=lambdas_avg_cell
 smooth_X=Smooth(X, bw_select,at = "points")[,2]
 
